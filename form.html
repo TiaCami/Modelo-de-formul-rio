@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Personalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        input[type="text"], 
+        input[type="password"],
+        select, 
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="enviar.php" method="POST">
+
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" placeholder="Digite seu nome" maxlength="50">
+
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" placeholder="Digite sua senha" maxlength="8">
+        </fieldset>
+
+        <fieldset>
+            <legend>Interesses</legend>
+            <label>Linguagem que tem interesse:</label>
+            <input type="checkbox" name="linguagem[]" value="cbuilder"> C++
+            <input type="checkbox" name="linguagem[]" value="php" checked> PHP
+            <input type="checkbox" name="linguagem[]" value="delphi"> Delphi
+        </fieldset>
+
+        <fieldset>
+            <legend>Curso Atual</legend>
+            <label>Linguagem que irá cursar agora:</label>
+            <input type="radio" name="curso" value="cbuilder"> C++
+            <input type="radio" name="curso" value="php" checked> PHP
+            <input type="radio" name="curso" value="delphi"> Delphi
+        </fieldset>
+
+        <fieldset>
+            <legend>Cursos já realizados</legend>
+            <label>Escolha na escola:</label>
+            <select name="escola">
+                <option value="bcb">C++Builder</option>
+                <option selected value="php">PHP</option>
+                <option value="delphi">Delphi</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Linguagens Dominadas</legend>
+            <label>Selecione as linguagens que já domina:</label>
+            <select name="D1" size="5" multiple>
+                <option value="bcb">C++Builder</option>
+                <option selected value="php">PHP</option>
+                <option value="delphi">Delphi</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mensagem</legend>
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="opiniao" rows="5" placeholder="Digite aqui sua mensagem..."></textarea>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+</html>
